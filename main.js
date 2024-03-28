@@ -14,14 +14,14 @@ function enviarDatos(e) {
     e.preventDefault()
 
 
-    let userNombreValue = inputUserNombre.value
-    let userEmailValue = inputUserEmail.value
-    let userMensajeValue = inputUserMensaje.value
+    // let userNombreValue = inputUserNombre.value
+    // let userEmailValue = inputUserEmail.value
+    // let userMensajeValue = inputUserMensaje.value
 
     let user = {
-        nombre: userNombreValue,
-        email: userEmailValue,
-        mensaje: userMensajeValue
+        nombre: inputUserNombre.value,
+        email:  inputUserEmail.value,
+        mensaje: inputUserMensaje.value,
     }
     //4-Guardar el objeto consoleado en LocalStorage
     localStorage.setItem('user', JSON.stringify(user));
@@ -34,5 +34,7 @@ btn.addEventListener("click", enviarDatos)
 let datosLocalStorage = JSON.parse(localStorage.getItem("user"));
 console.log(datosLocalStorage);
 
+// 5-Mostrar el usuario que has guardado en el DOM (en el HTML)
 
-
+const printOnHTML = document.getElementById("printedText")
+printOnHTML.innerHTML = inputUserNombre.value
